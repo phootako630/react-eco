@@ -1,1 +1,1 @@
-# react-eco
+# React ecosystem and its modern tools
