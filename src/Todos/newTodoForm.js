@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux';
-import { createTodo } from "../action";
 import './newTodoForm.css'
+import {addTodoRequest} from "./thunks";
 
 const NewTodoForm = ({ todos, onCreatePressed }) => {
     const [inputValue, setInputValue] = useState('');
@@ -30,7 +30,7 @@ const mapStateProps = state => ({
 });
 
 const mapDispatchProps = dispatch => ({
-    onCreatePressed: text => dispatch(createTodo(text))
+    onCreatePressed: text => dispatch(addTodoRequest(text))
 });
 
 export default connect(mapStateProps, mapDispatchProps) (NewTodoForm);
