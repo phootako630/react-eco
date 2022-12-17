@@ -34,10 +34,10 @@ export const todos = (state = [], action) => {
 
         }
         case MARK_TODO: {
-            const { text } = payload;
+            const { todo: todoMark } = payload;
             return state.map(todo => {
-                if (todo.text === text) {
-                    return {...todo, isCompleted: true}
+                if (todo.id === todoMark.id) {
+                    return todoMark
                 }
                 return todo;
                 }
